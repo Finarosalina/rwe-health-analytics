@@ -5,6 +5,28 @@ The project is structured as a realistic healthcare data pipeline: from syntheti
 
 ---
 
+Business / Clinical Objective
+
+This project simulates a realistic Real-World Evidence (RWE) workflow using synthetic EHR data to demonstrate how patient-level healthcare data can be transformed into clinically meaningful insights and modelling-ready datasets.
+It is designed to reflect use cases relevant to HEOR, clinical research, digital health, and observational analytics
+
+
+Use Cases / Why it matters
+
+Cohort construction for observational studies
+
+Risk stratification and outcome prediction
+
+Survival analysis for time-to-event endpoints
+
+Treatment pattern and medication utilization analysis
+
+Causal inference and comparative effectiveness research
+
+Synthetic data prototyping for privacy-preserving healthcare analytics
+
+---
+
 ## 1. Overview
 
 This repository provides a reproducible environment for analysing longitudinal, patient-level healthcare data.  
