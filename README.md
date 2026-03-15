@@ -27,6 +27,23 @@ Synthetic data prototyping for privacy-preserving healthcare analytics
 
 ---
 
+Potential Digital Health Applications
+
+The analytical workflows implemented in this project are relevant for several
+digital health and precision medicine use cases, including:
+
+• digital biomarker discovery
+• remote patient monitoring
+• clinical risk stratification
+• early disease detection
+• decision support systems
+
+These approaches are particularly relevant for chronic disease management
+contexts such as diabetes, cardiovascular disease and metabolic disorders.
+
+---
+
+
 ## 1. Overview
 
 This repository provides a reproducible environment for analysing longitudinal, patient-level healthcare data.  
