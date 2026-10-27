@@ -1,5 +1,7 @@
 # RWE Health Analytics Platform
 
+> **Status:** work in progress. Implemented: synthetic EHR data generator, validated data loader with basic cohort logic, and an exploratory cohort EDA notebook. Planned: risk prediction, survival analysis and causal inference (see *Roadmap*).
+
 A modular analytics framework for working with Real World Evidence (RWE) and electronic health records (EHR).  
 The project is structured as a realistic healthcare data pipeline: from synthetic data generation to ingestion, cohort construction, exploratory analysis, and the foundation for downstream modeling (risk prediction, survival analysis, and causal inference).
 
@@ -66,34 +68,16 @@ The project currently uses synthetic EHR-style data aligned with realistic clini
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white)
-![Polars](https://img.shields.io/badge/Polars-5A4FCF?logoColor=white)
-
-### Machine Learning & Modeling
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?logo=scikit-learn&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-FF9900?logo=xgboost&logoColor=white)
-![LightGBM](https://img.shields.io/badge/LightGBM-013243?logo=lightgbm&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white)
-
-### Causal Inference & Survival Analysis
-![Lifelines](https://img.shields.io/badge/Lifelines-000000)
-![Scikit-Survival](https://img.shields.io/badge/Scikit--Survival-0A0A0A)
-![DoWhy](https://img.shields.io/badge/DoWhy-4B8BBE)
-![EconML](https://img.shields.io/badge/EconML-003B57)
-![CausalML](https://img.shields.io/badge/CausalML-0052CC)
 
 ### Visualization
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-37474F?logo=matplotlib&logoColor=white)
 ![Seaborn](https://img.shields.io/badge/Seaborn-4C8BBE?logoColor=white)
 ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?logo=plotly&logoColor=white)
-![Altair](https://img.shields.io/badge/Altair-1F70C1?logoColor=white)
 
-### Apps, Data & Infra
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
-![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?logoColor=black)
-![SQLite](https://img.shields.io/badge/SQLite-07405E?logo=sqlite&logoColor=white)
+### Tooling
 ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?logo=visual-studio-code&logoColor=white)
+
+**Planned for the modelling layer:** scikit-learn, XGBoost, lifelines / scikit-survival, DoWhy / EconML, Streamlit.
 
 ---
 
@@ -102,27 +86,19 @@ The project currently uses synthetic EHR-style data aligned with realistic clini
 ```text
 rwe-health-analytics/
 │
-├── data/
-│   ├── raw/                     # Synthetic EHR datasets
-│   └── processed/               # Cleaned datasets (future)
-│
 ├── notebooks/
-│   └── 01_exploraroy.analysis.ipynb
+│   └── 01_exploratory_eda.ipynb      # Cohort EDA
 │
 ├── src/
 │   └── rwe_health_analytics/
 │       ├── data/
-│       │   ├── data_loader.py
-│       │   └── data_generation/
-│       │       └── synthetic_data_generator.py
-│       ├── models/              # Survival / ML / causal (future)
-│       ├── evaluation/          # Metrics and validation (future)
-│       └── visualization/       # Plotting utilities (future)
+│       │   └── data_loader.py        # Loading, validation, cohort logic
+│       └── data_generation/
+│           └── synthetic_data_generator.py
 │
-├── tests/                       # Test suite
-├── docs/                        # Methodology and technical notes
 ├── requirements.txt
-└── setup.py
+├── setup.py
+└── project_setup.sh
 ```
 
 ---
@@ -202,7 +178,7 @@ pip install -e .
 Run:
 
 ```bash
-python src/rwe_health_analytics/data/data_generation/synthetic_data_generator.py
+python src/rwe_health_analytics/data_generation/synthetic_data_generator.py
 ```
 
 This generates:
@@ -248,7 +224,7 @@ jupyter notebook
 Notebook included:
 
 ```
-notebooks/01_exploratory_analysis.ipynb
+notebooks/01_exploratory_eda.ipynb
 ```
 
 The analysis covers:
@@ -262,7 +238,7 @@ The analysis covers:
 
 ---
 
-## 8. Extensibility
+## 8. Roadmap
 
 The project is structured as a Python package to support clean expansion.
 
@@ -279,10 +255,7 @@ Future modules may include:
 
 ## 9. Testing
 
-```bash
-pytest
-pytest --cov=src
-```
+Automated tests are planned (pytest).
 
 ---
 
@@ -296,4 +269,5 @@ MIT License.
 **Maria Pais Fajín**  
 GitHub: https://github.com/Finarosalina  
 LinkedIn: https://linkedin.com/in/maria-pais-fajin
+
 
